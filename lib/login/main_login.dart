@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class LoginAPP extends StatefulWidget {
@@ -11,6 +12,25 @@ bool _isObscure2 = true;
 var color = Colors.transparent;
 
 class _LoginAPPState extends State<LoginAPP> {
+  // CollectionReference users = FirebaseFirestore.instance.collection('users');
+  @override
+  void initState() {
+    // addUser();
+    super.initState();
+  }
+
+  // Future<void> addUser() {
+  // Call the user's CollectionReference to add a new user
+  // return users
+  //     .add({
+  //       'full_name': "ssss", // John Doe
+  //       'company': "rrrr", // Stokes and Sons
+  //       'age': 18 // 42
+  //     })
+  //     .then((value) => print("User Added"))
+  //     .catchError((error) => print("Failed to add user: $error"));
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +137,9 @@ class _LoginAPPState extends State<LoginAPP> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     InkWell(
-                      onTap: () {  Navigator.of(context).pushNamed("/forget_password");},
+                      onTap: () {
+                        Navigator.of(context).pushNamed("/forget_password");
+                      },
                       highlightColor: color,
                       splashColor: color,
                       hoverColor: color,
