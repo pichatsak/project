@@ -30,7 +30,7 @@ class _IamDATAState extends State<IamDATA> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Padding(
@@ -147,7 +147,7 @@ class _IamDATAState extends State<IamDATA> {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 10),
+                            const SizedBox(width: 5),
                             Row(
                               children: const [
                                 Text(
@@ -189,7 +189,7 @@ class _IamDATAState extends State<IamDATA> {
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 10),
+                            const SizedBox(width: 5),
                             Row(
                               children: const [
                                 Text(

@@ -75,7 +75,7 @@ Widget dropdown1(setState) {
         buttonWidth: double.maxFinite,
         buttonPadding: const EdgeInsets.only(left: 14, right: 14),
         buttonDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
+          borderRadius: BorderRadius.circular(90),
           // border: Border.all(
           //   color: Colors.black26,
           // ),
