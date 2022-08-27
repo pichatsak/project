@@ -208,27 +208,30 @@ class _LoginAPPState extends State<LoginAPP> {
                   ],
                 ),
                 const SizedBox(height: 15),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushNamed("/registor");
-                  },
-                  highlightColor: color,
-                  splashColor: color,
-                  hoverColor: color,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 1, 72, 82)),
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.circular(90),
-                    ),
-                    height: 60,
-                    child: const Center(
-                      child: Text("ลงทะเบียน",
-                          style: TextStyle(
-                              fontSize: 17,
-                              color: Color.fromARGB(255, 1, 72, 82),
-                              fontFamily: "Prompt-Medium")),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed("/registor");
+                    },
+                    highlightColor: color,
+                    splashColor: Theme.of(context).primaryColorLight,
+                    hoverColor: color,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 1, 72, 82)),
+                        color: Colors.white70,
+                        borderRadius: BorderRadius.circular(90),
+                      ),
+                      height: 60,
+                      child: const Center(
+                        child: Text("ลงทะเบียน",
+                            style: TextStyle(
+                                fontSize: 17,
+                                color: Color.fromARGB(255, 1, 72, 82),
+                                fontFamily: "Prompt-Medium")),
+                      ),
                     ),
                   ),
                 ),
