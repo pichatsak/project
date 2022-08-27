@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:project/homepage/widget_drodown1.dart';
 
 class EditIamDATA extends StatefulWidget {
   const EditIamDATA({Key? key}) : super(key: key);
@@ -144,23 +145,31 @@ class _EditIamDATAState extends State<EditIamDATA> {
                 ),
               ),
               const SizedBox(height: 10),
-              Theme(
-                data:
-                    ThemeData(primarySwatch: Colors.cyan, fontFamily: "Prompt"),
-                child: TextFormField(
-                  initialValue: 'ชาย',
-                  decoration: InputDecoration(
-                      isDense: true,
-                      contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      border: UnderlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(90),
-                      ),
-                      labelText: 'เพศ',
-                      filled: true,
-                      fillColor: Colors.white,
-                      prefixIcon: const Icon(Icons.female, size: 23)),
-                ),
+              // Theme(
+              //   data:
+              //       ThemeData(primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+              //   child: TextFormField(
+              //     initialValue: 'ชาย',
+              //     decoration: InputDecoration(
+              //         isDense: true,
+              //         contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              //         border: UnderlineInputBorder(
+              //           borderSide: BorderSide.none,
+              //           borderRadius: BorderRadius.circular(90),
+              //         ),
+              //         labelText: 'เพศ',
+              //         filled: true,
+              //         fillColor: Colors.white,
+              //         prefixIcon: const Icon(Icons.female, size: 23)),
+              //   ),
+              // ),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(90)),
+                height: 60,
+                width: 500,
+                child: dropdown1(setState),
               ),
               const SizedBox(height: 10),
               Theme(

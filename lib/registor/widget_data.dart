@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project/registor/widget_dropdown.dart';
+import 'package:project/registor/widget_dropdown2.dart';
 
 class DataAPP extends StatefulWidget {
   const DataAPP({Key? key}) : super(key: key);
@@ -112,7 +114,8 @@ class _DataAPPState extends State<DataAPP> {
                             filled: true,
                             fillColor: Colors.white,
                             prefixIcon: const Icon(
-                              Icons.family_restroom,size: 20,
+                              Icons.family_restroom,
+                              size: 20,
                             )),
                       ),
                     ),
@@ -144,41 +147,51 @@ class _DataAPPState extends State<DataAPP> {
                           primarySwatch: Colors.cyan, fontFamily: "Prompt"),
                       child: TextFormField(
                         decoration: InputDecoration(
-                            isDense: true,
-                            contentPadding:
-                                const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            border: UnderlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(90),
-                            ),
-                            labelText: 'ส่วนสูง (เซนติเมตร)',
-                            filled: true,
-                            fillColor: Colors.white,
-                            prefixIcon:  const Icon(
-                            Icons.escalator_warning,size: 21,
-                          ),),
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          labelText: 'ส่วนสูง (เซนติเมตร)',
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: const Icon(
+                            Icons.escalator_warning,
+                            size: 21,
+                          ),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Theme(
-                      data: ThemeData(
-                          primarySwatch: Colors.cyan, fontFamily: "Prompt"),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            isDense: true,
-                            contentPadding:
-                                const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            border: UnderlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(90),
-                            ),
-                            labelText: 'เพศ',
-                            filled: true,
-                            fillColor: Colors.white,
-                            prefixIcon: const Icon(
-                              Icons.female,size: 23,
-                            )),
-                      ),
+                    // Theme(
+                    //   data: ThemeData(
+                    //       primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+                    //   child: TextFormField(
+                    //     decoration: InputDecoration(
+                    //         isDense: true,
+                    //         contentPadding:
+                    //             const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    //         border: UnderlineInputBorder(
+                    //           borderSide: BorderSide.none,
+                    //           borderRadius: BorderRadius.circular(90),
+                    //         ),
+                    //         labelText: 'เพศ',
+                    //         filled: true,
+                    //         fillColor: Colors.white,
+                    //         prefixIcon: const Icon(
+                    //           Icons.female,size: 23,
+                    //         )),
+                    //   ),
+                    // ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(90)),
+                      height: 60,
+                      width: 500,
+                      child: dropdown(setState),
                     ),
                     const SizedBox(height: 10),
                     Theme(
@@ -202,7 +215,148 @@ class _DataAPPState extends State<DataAPP> {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 10),
+                    Theme(
+                      data: ThemeData(
+                          primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          labelText: 'รหัส HN ของผู้เข้ารักษา',
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: const Icon(
+                            Icons.contact_page,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Theme(
+                      data: ThemeData(
+                          primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          labelText: 'วันที่เข้านอน โรงพยาบาล',
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: const Icon(
+                            Icons.calendar_month,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Theme(
+                      data: ThemeData(
+                          primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          labelText: 'วันที่ออกจาก โรงพยาบาล',
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: const Icon(
+                            Icons.calendar_month,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Theme(
+                      data: ThemeData(
+                          primarySwatch: Colors.cyan, fontFamily: "Prompt"),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(90),
+                          ),
+                          labelText: 'วันที่ผ่าตัด',
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: const Icon(
+                            Icons.calendar_today,
+                            size: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(90)),
+                      height: 60,
+                      width: 500,
+                      child: dropdown2(setState),
+                    ),
                     const SizedBox(height: 30),
+                    Row(
+                      children: [
+                        Image.asset(
+                          "images/map.png",
+                          filterQuality: FilterQuality.high,
+                          width: 32,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text("แผนที่บ้าน :",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: "Prompt-Medium",
+                                color: Colors.black54)),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                          child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xff018592),
+                          borderRadius: BorderRadius.circular(90),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(10.0),
+                          child: Icon(
+                            Icons.add,
+                            size: 32,
+                            color: Colors.white,
+                          ),
+                        ),
+                      )),
+                    ),
+                    const SizedBox(height: 50),
                     InkWell(
                       onTap: () {},
                       highlightColor: color,
