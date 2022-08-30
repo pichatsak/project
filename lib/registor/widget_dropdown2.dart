@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 final List<String> items = [
   'หัวเข่าข้างซ้าย',
   'หัวเข่าข้างขวา',
+  'หัวเข่าทั้งสองข้าง',
 ];
 String? selectedValue;
 

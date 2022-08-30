@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:project/homepage/main_homepage.dart';
 import 'package:project/homepage/widget_chat_doctor.dart';
 import 'package:project/homepage/widget_edit_i_am_data.dart';
@@ -9,11 +10,13 @@ import 'package:project/login/main_login.dart';
 import 'package:project/login/widget_forget_password.dart';
 import 'package:project/login/widget_new_forget_password.dart';
 import 'package:project/registor/main_registor.dart';
+import 'package:project/registor/map_choose.dart';
 import 'package:project/registor/widget_data.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -34,7 +37,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const LoginAPP(),
         "/registor": (context) => const RegistorAPP(),
-        "/data_registor": (context) => const DataAPP(),
+        // ignore: prefer_const_constructors
+        "/data_registor": (context) => DataAPP(),
         "/homepage": (context) => const HomePageAPP(),
         "/i_am_data": (context) => const IamDATA(),
         "/edit_i_am_data": (context) => const EditIamDATA(),
@@ -42,6 +46,7 @@ class MyApp extends StatelessWidget {
         "/forget_password": (context) => const Forgetpassword(),
         "/new_forget_password": (context) => const NewForgetPassword(),
         "/reset_password": (context) => const ResetPassword(),
+        "/map_choose_pin": (context) => MapChoosePin(),
       },
     );
   }

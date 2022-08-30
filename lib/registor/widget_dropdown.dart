@@ -10,7 +10,7 @@ String? selectedValue;
 Widget dropdown(setState) {
   return Center(
     child: DropdownButtonHideUnderline(
-      child: DropdownButton2(
+      child: DropdownButtonFormField2(
         isExpanded: true,
         hint: Row(
           children: const [
@@ -35,17 +35,19 @@ Widget dropdown(setState) {
         items: items
             .map((item) => DropdownMenuItem<String>(
                   value: item,
-                  child:  Row(
+                  child: Row(
                     children: [
-                      item=="ชาย"?const Icon(
-                        Icons.man,
-                        size: 23,
-                        color: Colors.black45,
-                      ):const Icon(
-                        Icons.woman,
-                        size: 23,
-                        color: Colors.black45,
-                      ),
+                      item == "ชาย"
+                          ? const Icon(
+                              Icons.man,
+                              size: 23,
+                              color: Colors.black45,
+                            )
+                          : const Icon(
+                              Icons.woman,
+                              size: 23,
+                              color: Colors.black45,
+                            ),
                       const SizedBox(width: 11),
                       Text(
                         item,

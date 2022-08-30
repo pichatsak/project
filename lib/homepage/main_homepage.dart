@@ -46,9 +46,11 @@ class _HomePageAPPState extends State<HomePageAPP> {
                         ),
                         Row(
                           children: [
-                            const Text("พิเชฐศักดิ์ ดุเหว่า",
+                            const Text("นิติพล พงษ์คำ",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 16,fontWeight: FontWeight.bold)),
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold)),
                             const SizedBox(width: 10),
                             Container(
                               decoration: BoxDecoration(

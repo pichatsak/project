@@ -80,6 +80,7 @@ class _LoginAPPState extends State<LoginAPP> {
                   data: ThemeData(
                       primarySwatch: Colors.cyan, fontFamily: "Prompt"),
                   child: TextFormField(
+                    keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       isDense: true,
                       contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
