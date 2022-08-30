@@ -1,9 +1,13 @@
+import 'dart:ffi';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 import 'package:location/location.dart';
+import 'package:project/model_data/users.dart';
 import 'package:project/registor/map_choose.dart';
 import 'package:project/widget/toast_tool.dart';
 import 'package:project/widget/valid_form.dart';
@@ -30,6 +34,7 @@ class _DataAPPState extends State<DataAPP> {
   TextEditingController dateTwoCl = TextEditingController();
   TextEditingController dateThreeCl = TextEditingController();
   TextEditingController mapCl = TextEditingController();
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   final box = GetStorage();
   late DateTime dateOne;
@@ -52,11 +57,8 @@ class _DataAPPState extends State<DataAPP> {
   late PermissionStatus _permissionGranted;
 
   Future<void> _navigateAndDisplaySelection(BuildContext context) async {
-    // Navigator.push returns a Future that completes after calling
-    // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      // Create the SelectionScreen in the next step.
       MaterialPageRoute(builder: (context) => MapChoosePin()),
     );
     if (!mounted) return;
@@ -80,7 +82,31 @@ class _DataAPPState extends State<DataAPP> {
 
   void goToRegis() {
     if (formKey.currentState!.validate()) {
-    } else {}
+      UsersData usersData = UsersData(
+          key: "",
+          phone: box.read("tempPhone").toString(),
+          pass: box.read("tempPass").toString(),
+          name: name.text,
+          age: double.parse(age.text),
+          weight: double.parse(weight.text),
+          high: double.parse(high.text),
+          sex: selectedValue!,
+          cdUser: cdUser.text,
+          numberHn: numberHN.text,
+          dateIn: dateOne,
+          dateOut: dateTwo,
+          dateSurgery: dateThree,
+          typeSur: selectedValue2!,
+          loLat: box.read("tempLat").toString(),
+          loLong: box.read("tempLong").toString(),
+          dateCreate: FieldValue.serverTimestamp());
+      users.add(usersData.toMap()).then((value) {
+        showToast("ลงทะเบียนเรียบร้อย");
+        Navigator.of(context).pushNamed("/");
+      }).catchError((error) {
+        showToast("ลงทะเบียนไม่สำเร็จ กรุณาลองอีกครั้ง");
+      });
+    }
   }
 
   void chooseDate1() {
